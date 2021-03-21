@@ -10,13 +10,21 @@ class CreditsSection extends StatelessWidget {
           vertical: 52.0,
         ),
         child: Center(
-          child: Text(
-            "Designed & Built by Lorenzo Calisti with Flutter",
-            style: Theme
-                .of(context)
-                .textTheme
-                .button
-                ?.copyWith(color: AppColors.textSecondary),
+          child: RichText(
+            text: TextSpan(
+                children: [
+                  TextSpan(text: "Designed & Built by Lorenzo Calisti with "),
+                  TextSpan(
+                      text: "Flutter",
+                      style: Theme.of(context)
+                          .textTheme
+                          .button
+                          ?.copyWith(color: Color(0xFF00C1F2))),
+                ],
+                style: Theme.of(context)
+                    .textTheme
+                    .button
+                    ?.copyWith(color: AppColors.textSecondary)),
           ),
         ),
       ),

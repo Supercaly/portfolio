@@ -11,6 +11,7 @@ class ContactSection extends StatelessWidget {
         ),
         color: Colors.green,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Contact Me",
@@ -27,9 +28,11 @@ class ContactSection extends StatelessWidget {
                   ?.copyWith(fontSize: 14.0),
             ),
             SizedBox(height: 24.0),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text("Contact Me"),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text("Contact Me"),
+              ),
             ),
           ],
         ),
