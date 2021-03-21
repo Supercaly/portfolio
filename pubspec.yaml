@@ -19,3 +19,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts/rubik/Rubik-Regular.ttf
+        - asset: fonts/rubik/Rubik-Medium.ttf
+          weight: 500
+        - asset: fonts/rubik/Rubik-Light.ttf
+          weight: 300
+
+

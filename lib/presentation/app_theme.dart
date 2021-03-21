@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static ThemeData theme = ThemeData.dark().copyWith(
+  static ThemeData theme = ThemeData(
+    brightness: Brightness.dark,
     primaryColor: AppColors.primary,
     accentColor: AppColors.secondary,
     backgroundColor: AppColors.primary,
+    fontFamily: "Rubik",
     iconTheme: IconThemeData(color: AppColors.icon),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
@@ -19,36 +21,43 @@ class AppTheme {
     ),
     textTheme: TextTheme(
         headline4: TextStyle(
+          fontFamily: "Rubik",
           fontSize: FontSizes.s35,
           color: AppColors.textAccent,
           fontWeight: FontWeight.w500,
         ),
         subtitle1: TextStyle(
+          fontFamily: "Rubik",
           fontSize: FontSizes.s24,
           color: AppColors.textPrimary,
           fontWeight: FontWeight.w500,
         ),
         subtitle2: TextStyle(
+          fontFamily: "Rubik",
           fontSize: FontSizes.s22,
           color: AppColors.textPrimary,
           fontWeight: FontWeight.w500,
         ),
         bodyText1: TextStyle(
+          fontFamily: "Rubik",
           fontWeight: FontWeight.w300,
           fontSize: FontSizes.s16,
           color: AppColors.textPrimary,
         ),
         button: TextStyle(
+          fontFamily: "Rubik",
           fontWeight: FontWeight.w400,
           fontSize: FontSizes.s14,
           color: AppColors.textPrimary,
         ),
         caption: TextStyle(
+          fontFamily: "Rubik",
           fontWeight: FontWeight.w300,
           fontSize: FontSizes.s12,
           color: AppColors.textSecondary,
         ),
         overline: TextStyle(
+          fontFamily: "Rubik",
           fontWeight: FontWeight.w300,
           fontSize: FontSizes.s10,
           color: AppColors.textSecondary,
