@@ -6,19 +6,40 @@ class SocialLink extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(Icons.mail),
-        SizedBox(width: 24.0),
-        Icon(Icons.phone),
-        SizedBox(width: 24.0),
-        Icon(Icons.mail),
-        SizedBox(width: 24.0),
-        Icon(Icons.phone),
-        SizedBox(width: 24.0),
-        Icon(Icons.mail),
-        SizedBox(width: 24.0),
-        Icon(Icons.phone),
-        SizedBox(width: 24.0),
-        Icon(Icons.mail),
+        IconButton(
+          icon: Icon(Icons.mail),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16.0),
+        IconButton(
+          icon: Icon(Icons.phone),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16.0),
+        IconButton(
+          icon: Icon(Icons.mail),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16.0),
+        IconButton(
+          icon: Icon(Icons.phone),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16.0),
+        IconButton(
+          icon: Icon(Icons.mail),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16.0),
+        IconButton(
+          icon: Icon(Icons.phone),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16.0),
+        IconButton(
+          icon: Icon(Icons.mail),
+          onPressed: () {},
+        ),
       ],
     );
   }

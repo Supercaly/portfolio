@@ -16,16 +16,15 @@ class ContactSection extends StatelessWidget {
               "Contact Me",
               style: Theme.of(context)
                   .textTheme
-                  .headline6
-                  ?.copyWith(fontSize: 24.0),
+                  .subtitle1,
             ),
             SizedBox(height: 16.0),
             Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque massa mattis tellus vitae, felis at ut vitae. Massa nullam massa potenti massa.",
               style: Theme.of(context)
                   .textTheme
-                  .bodyText1
-                  ?.copyWith(fontSize: 24.0),
+                  .subtitle2
+                  ?.copyWith(fontSize: 14.0),
             ),
             SizedBox(height: 24.0),
             ElevatedButton(

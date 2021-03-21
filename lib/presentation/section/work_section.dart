@@ -14,7 +14,7 @@ class WorkSection extends StatelessWidget {
             subsection: 1,
             title: "Where I've Worked",
           ),
-          SizedBox(height: 48.0),
+          SizedBox(height: 24.0),
           InfoBox(),
           SizedBox(height: 16.0),
           InfoBox(),

@@ -14,7 +14,7 @@ class StudySection extends StatelessWidget {
             subsection: 2,
             title: "Where I've Studied",
           ),
-          SizedBox(height: 48.0),
+          SizedBox(height: 24.0),
           InfoBox(),
           SizedBox(height: 16.0),
           InfoBox(),

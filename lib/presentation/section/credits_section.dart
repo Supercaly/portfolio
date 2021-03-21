@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/presentation/app_theme.dart';
 
 class CreditsSection extends StatelessWidget {
   @override
@@ -14,8 +15,8 @@ class CreditsSection extends StatelessWidget {
             style: Theme
                 .of(context)
                 .textTheme
-                .headline6
-                ?.copyWith(fontSize: 14.0),
+                .button
+                ?.copyWith(color: AppColors.textSecondary),
           ),
         ),
       ),
