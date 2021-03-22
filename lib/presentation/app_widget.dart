@@ -16,7 +16,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppTheme.theme,
+      builder: buildTheme,
       home: ChangeNotifierProvider<AppState>(
         create: (context) => AppState(),
         child: Builder(
