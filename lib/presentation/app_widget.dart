@@ -8,6 +8,8 @@ import 'package:portfolio/presentation/section/home_section.dart';
 import 'package:portfolio/presentation/section/projects_section.dart';
 import 'package:portfolio/presentation/section/study_section.dart';
 import 'package:portfolio/presentation/section/work_section.dart';
+import 'package:portfolio/presentation/widget/responsive.dart';
+import 'package:portfolio/presentation/widget/social_link.dart';
 import 'package:provider/provider.dart';
 
 class AppWidget extends StatelessWidget {
@@ -21,15 +23,29 @@ class AppWidget extends StatelessWidget {
         create: (context) => AppState(),
         child: Builder(
           builder: (context) => Scaffold(
-            body: CustomScrollView(
-              slivers: [
-                HomeSection(),
-                AboutSection(),
-                WorkSection(),
-                StudySection(),
-                ProjectsSection(),
-                ContactSection(),
-                CreditsSection(),
+            body: Stack(
+              children: [
+                CustomScrollView(
+                  slivers: [
+                    HomeSection(),
+                    AboutSection(),
+                    WorkSection(),
+                    StudySection(),
+                    ProjectsSection(),
+                    ContactSection(),
+                    CreditsSection(),
+                  ],
+                ),
+                if (Responsive.isLarge(context))
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 56.0, bottom: 56.0),
+                      child: SocialLink(
+                        direction: Axis.vertical,
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),
