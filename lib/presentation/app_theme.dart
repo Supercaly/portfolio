@@ -130,7 +130,10 @@ class AppTheme {
 }
 
 class Insets {
-  static const double largeOffset = 166.0;
+  static const double sectionVerticalOffsetLarge = 211.0;
+  static const double sectionLeftOffsetLarge = 166.0;
+  static const double sectionVerticalOffsetSmall = 56.0;
+  static const double sectionHorizontalOffsetSmall = 32.0;
 }
 
 class Fonts {

@@ -6,8 +6,7 @@ import 'package:portfolio/presentation/section/contact_section.dart';
 import 'package:portfolio/presentation/section/credits_section.dart';
 import 'package:portfolio/presentation/section/home_section.dart';
 import 'package:portfolio/presentation/section/projects_section.dart';
-import 'package:portfolio/presentation/section/study_section.dart';
-import 'package:portfolio/presentation/section/work_section.dart';
+import 'package:portfolio/presentation/section/career_section.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/social_link.dart';
 import 'package:provider/provider.dart';
@@ -29,8 +28,7 @@ class AppWidget extends StatelessWidget {
                   slivers: [
                     HomeSection(),
                     AboutSection(),
-                    WorkSection(),
-                    StudySection(),
+                    CareerSection(),
                     ProjectsSection(),
                     ContactSection(),
                     CreditsSection(),

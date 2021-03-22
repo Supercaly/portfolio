@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/career_event.dart';
 import 'package:portfolio/presentation/app_theme.dart';
+import 'package:portfolio/presentation/widget/responsive.dart';
 
 class CareerEventWidget extends StatelessWidget {
   final CareerEvent event;
@@ -27,7 +28,7 @@ class CareerEventWidget extends StatelessWidget {
             color: AppColors.textPrimary,
           ),
         ),
-        SizedBox(width: 16.0),
+        SizedBox(width: Responsive.isLarge(context) ? 42.0 : 16.0),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

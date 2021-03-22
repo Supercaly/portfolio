@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/application/app_state.dart';
 import 'package:portfolio/core/column_extension.dart';
 import 'package:portfolio/domain/about.dart';
+import 'package:portfolio/presentation/app_theme.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/section_title_bar.dart';
 import 'package:portfolio/presentation/widget/skill_widget.dart';
@@ -24,8 +25,8 @@ class AboutContentSmall extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: 52.0,
-        horizontal: 32.0,
+        vertical: Insets.sectionVerticalOffsetSmall,
+        horizontal: Insets.sectionHorizontalOffsetSmall,
       ),
       child: Selector<AppState, About>(
         selector: (_, state) => state.about,
@@ -61,10 +62,10 @@ class AboutContentLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: 211.0,
-        bottom: 211.0,
-        left: 166.0,
-        right: 32.0,
+        top: Insets.sectionVerticalOffsetLarge,
+        bottom: Insets.sectionVerticalOffsetLarge,
+        left: Insets.sectionLeftOffsetLarge,
+        right: Insets.sectionHorizontalOffsetSmall,
       ),
       child: Selector<AppState, About>(
         selector: (_, state) => state.about,
