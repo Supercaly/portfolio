@@ -9,6 +9,8 @@ import 'package:portfolio/presentation/widget/skill_widget.dart';
 import 'package:provider/provider.dart';
 
 class AboutSection extends StatelessWidget {
+  AboutSection({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(

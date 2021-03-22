@@ -14,15 +14,21 @@ class AppTheme {
     fontWeight: FontWeight.w400,
   );
 
-  static ThemeData theme = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: AppColors.primary,
-    accentColor: AppColors.secondary,
-    backgroundColor: AppColors.primary,
-    fontFamily: Fonts.rubik,
-    iconTheme: IconThemeData(color: AppColors.icon),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
+  static ElevatedButtonThemeData _defaultElevatedButtonTheme =
+      ElevatedButtonThemeData(
+    style: ButtonStyle(
+      padding: MaterialStateProperty.all(
+        EdgeInsets.symmetric(
+          vertical: 24.0,
+          horizontal: 48.0,
+        ),
+      ),
+      backgroundColor: MaterialStateProperty.all(AppColors.primary),
+    ),
+  );
+
+  static TextButtonThemeData _defaultTextButtonTheme = TextButtonThemeData(
+    style: ButtonStyle(
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(
             vertical: 24.0,
@@ -30,8 +36,20 @@ class AppTheme {
           ),
         ),
         backgroundColor: MaterialStateProperty.all(AppColors.primary),
-      ),
-    ),
+        foregroundColor: MaterialStateProperty.all(AppColors.textPrimary),
+        textStyle: MaterialStateProperty.all(
+            _defaultText.copyWith(fontSize: FontSizes.s14))),
+  );
+
+  static ThemeData theme = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: AppColors.primary,
+    accentColor: AppColors.secondary,
+    scaffoldBackgroundColor: AppColors.primary,
+    fontFamily: Fonts.rubik,
+    iconTheme: IconThemeData(color: AppColors.icon),
+    elevatedButtonTheme: _defaultElevatedButtonTheme,
+    textButtonTheme: _defaultTextButtonTheme,
     textTheme: TextTheme(
       headline4: _defaultText.copyWith(
         fontSize: FontSizes.s35,
@@ -71,24 +89,7 @@ class AppTheme {
     ),
   );
 
-  static ThemeData largeTheme = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: AppColors.primary,
-    accentColor: AppColors.secondary,
-    backgroundColor: AppColors.primary,
-    fontFamily: Fonts.rubik,
-    iconTheme: IconThemeData(color: AppColors.icon),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(
-            vertical: 24.0,
-            horizontal: 48.0,
-          ),
-        ),
-        backgroundColor: MaterialStateProperty.all(AppColors.primary),
-      ),
-    ),
+  static ThemeData largeTheme = theme.copyWith(
     textTheme: TextTheme(
       headline4: _defaultText.copyWith(
         fontSize: FontSizes.s70,
@@ -127,6 +128,17 @@ class AppTheme {
       ),
     ),
   );
+}
+
+class Durations {
+  static const Duration scroll = const Duration(milliseconds: 350);
+}
+
+class Keys {
+  static GlobalKey about = GlobalKey();
+  static GlobalKey experience = GlobalKey();
+  static GlobalKey projects = GlobalKey();
+  static GlobalKey contacts = GlobalKey();
 }
 
 class Insets {

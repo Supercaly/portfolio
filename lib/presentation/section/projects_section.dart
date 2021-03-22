@@ -8,6 +8,8 @@ import 'package:portfolio/presentation/widget/section_title_bar.dart';
 import 'package:provider/provider.dart';
 
 class ProjectsSection extends StatelessWidget {
+  ProjectsSection({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SectionSliver(

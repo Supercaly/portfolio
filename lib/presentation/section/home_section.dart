@@ -36,7 +36,12 @@ class HomeSection extends StatelessWidget {
             IconButton(
               iconSize: 48.0,
               icon: Icon(Icons.keyboard_arrow_down),
-              onPressed: () {},
+              onPressed: () {
+                Scrollable.ensureVisible(
+                  Keys.about.currentContext!,
+                  duration: Durations.scroll,
+                );
+              },
             ),
           ],
         ),

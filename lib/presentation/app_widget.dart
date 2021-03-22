@@ -7,6 +7,7 @@ import 'package:portfolio/presentation/section/credits_section.dart';
 import 'package:portfolio/presentation/section/home_section.dart';
 import 'package:portfolio/presentation/section/projects_section.dart';
 import 'package:portfolio/presentation/section/career_section.dart';
+import 'package:portfolio/presentation/widget/custom_app_bar.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/social_link.dart';
 import 'package:provider/provider.dart';
@@ -22,15 +23,21 @@ class AppWidget extends StatelessWidget {
         create: (context) => AppState(),
         child: Builder(
           builder: (context) => Scaffold(
+            appBar: Responsive.isLarge(context)
+                ? PreferredSize(
+                    child: CustomAppBar(),
+                    preferredSize: Size.fromHeight(65.0),
+                  )
+                : null,
             body: Stack(
               children: [
                 CustomScrollView(
                   slivers: [
                     HomeSection(),
-                    AboutSection(),
-                    CareerSection(),
-                    ProjectsSection(),
-                    ContactSection(),
+                    AboutSection(key: Keys.about),
+                    CareerSection(key: Keys.experience),
+                    ProjectsSection(key: Keys.projects),
+                    ContactSection(key: Keys.contacts),
                     CreditsSection(),
                   ],
                 ),

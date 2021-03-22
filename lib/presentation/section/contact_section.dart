@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ContactSection extends StatelessWidget {
+  ContactSection({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -15,9 +17,7 @@ class ContactSection extends StatelessWidget {
           children: [
             Text(
               "Contact Me",
-              style: Theme.of(context)
-                  .textTheme
-                  .subtitle1,
+              style: Theme.of(context).textTheme.subtitle1,
             ),
             SizedBox(height: 16.0),
             Text(
