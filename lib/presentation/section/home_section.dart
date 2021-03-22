@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/app_theme.dart';
+import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/social_link.dart';
 
 class HomeSection extends StatelessWidget {
@@ -22,10 +23,7 @@ class HomeSection extends StatelessWidget {
                 SizedBox(height: 10),
                 Text(
                   "Lorenzo Calisti",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline4
-                      ?.copyWith(fontSize: 35),
+                  style: Theme.of(context).textTheme.headline4,
                 ),
                 SizedBox(height: 10),
                 Text(
@@ -34,8 +32,12 @@ class HomeSection extends StatelessWidget {
                 ),
               ],
             ),
-            SocialLink(),
-            Icon(Icons.keyboard_arrow_down)
+            if (!Responsive.isLarge(context)) SocialLink(),
+            IconButton(
+              iconSize: 48.0,
+              icon: Icon(Icons.keyboard_arrow_down),
+              onPressed: () {},
+            ),
           ],
         ),
       ),
