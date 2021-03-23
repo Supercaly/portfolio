@@ -16,17 +16,13 @@ class CareerSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Padding(
-        padding: EdgeInsets.only(
-          top: Responsive.isLarge(context)
+        padding: EdgeInsets.symmetric(
+          vertical: Responsive.isLarge(context)
               ? Insets.sectionVerticalOffsetLarge
               : Insets.sectionVerticalOffsetSmall,
-          bottom: Responsive.isLarge(context)
-              ? Insets.sectionVerticalOffsetLarge
-              : Insets.sectionVerticalOffsetSmall,
-          left: Responsive.isLarge(context)
-              ? Insets.sectionLeftOffsetLarge
+          horizontal: Responsive.isLarge(context)
+              ? Insets.sectionHorizontalOffsetLarge
               : Insets.sectionHorizontalOffsetSmall,
-          right: Insets.sectionHorizontalOffsetSmall,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

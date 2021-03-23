@@ -26,7 +26,7 @@ class AboutContentSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: Insets.sectionVerticalOffsetSmall,
         horizontal: Insets.sectionHorizontalOffsetSmall,
       ),
@@ -63,11 +63,9 @@ class AboutContentLarge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        top: Insets.sectionVerticalOffsetLarge,
-        bottom: Insets.sectionVerticalOffsetLarge,
-        left: Insets.sectionLeftOffsetLarge,
-        right: Insets.sectionHorizontalOffsetSmall,
+      padding: const EdgeInsets.symmetric(
+        vertical: Insets.sectionVerticalOffsetLarge,
+        horizontal: Insets.sectionHorizontalOffsetLarge,
       ),
       child: Selector<AppState, About>(
         selector: (_, state) => state.about,

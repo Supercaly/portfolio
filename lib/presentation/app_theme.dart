@@ -143,7 +143,7 @@ class Keys {
 
 class Insets {
   static const double sectionVerticalOffsetLarge = 211.0;
-  static const double sectionLeftOffsetLarge = 166.0;
+  static const double sectionHorizontalOffsetLarge = 166.0;
   static const double sectionVerticalOffsetSmall = 56.0;
   static const double sectionHorizontalOffsetSmall = 32.0;
 }
