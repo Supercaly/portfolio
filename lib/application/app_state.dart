@@ -66,7 +66,7 @@ class AppState extends ChangeNotifier {
       title: "Balance",
       description:
           "Applicazione per Smartphone sviluppata per la tesi in Informatica Applicata in accordo con DIGIT s.r.l. con lo scopo di consentire a chiunque di misurare la propria postura stabilometrica in pochi secondi sfruttando gli accelerometri del proprio smartphone.",
-      images: ["", ""],
+      images: ["", "", ""],
       links: [Link(type: LinkType.playstore, url: "")],
       tags: ["Dart", "Falutter"],
     ),
@@ -74,6 +74,7 @@ class AppState extends ChangeNotifier {
       title: "Tasky",
       description:
           "Applicazione multi piattaforma per la gestione dell'andamento dei progetti all'interno di un ambiente di lavoro.",
+      images: ["", ""],
       links: [Link(type: LinkType.github, url: "")],
       tags: ["Dart", "Falutter"],
     ),
