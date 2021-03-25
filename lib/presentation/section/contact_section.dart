@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/presentation/app_theme.dart';
+import 'package:portfolio/presentation/widget/responsive.dart';
 
 class ContactSection extends StatelessWidget {
   ContactSection({Key? key}) : super(key: key);
@@ -7,11 +9,13 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 24.0,
-          horizontal: 32.0,
+        padding: EdgeInsets.symmetric(
+          vertical: Responsive.isLarge(context) ? 90.0 : 24.0,
+          horizontal: Responsive.isLarge(context)
+              ? Insets.sectionHorizontalOffsetLarge
+              : Insets.sectionHorizontalOffsetSmall,
         ),
-        color: Colors.green,
+        color: AppColors.secondary,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,13 +29,13 @@ class ContactSection extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .subtitle2
-                  ?.copyWith(fontSize: 14.0),
+                  ?.copyWith(fontSize: FontSizes.s14),
             ),
             SizedBox(height: 24.0),
             Center(
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text("Contact Me"),
+                child: Text("Contact Me", style: Theme.of(context).textTheme.button?.copyWith(fontSize: FontSizes.s18),),
               ),
             ),
           ],
