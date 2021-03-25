@@ -3,6 +3,7 @@ import 'package:portfolio/application/app_state.dart';
 import 'package:portfolio/core/column_extension.dart';
 import 'package:portfolio/domain/about.dart';
 import 'package:portfolio/presentation/app_theme.dart';
+import 'package:portfolio/presentation/widget/profile_image.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/section_title_bar.dart';
 import 'package:portfolio/presentation/widget/skill_widget.dart';
@@ -37,10 +38,7 @@ class AboutContentSmall extends StatelessWidget {
           children: [
             SectionTitleBar(section: 1, title: "About Me"),
             SizedBox(height: 48.0),
-            Placeholder(
-              fallbackHeight: 230.0,
-              fallbackWidth: 230.0,
-            ),
+            ProfileImage(),
             SizedBox(height: 48.0),
             Text(
               value.about,
@@ -87,10 +85,7 @@ class AboutContentLarge extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 48.0),
-                  Placeholder(
-                    fallbackHeight: 230.0,
-                    fallbackWidth: 230.0,
-                  ),
+                  ProfileImage(),
                 ],
               ),
             ),
