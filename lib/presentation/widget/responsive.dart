@@ -23,7 +23,7 @@ class Responsive extends StatelessWidget {
     required this.small,
     this.medium,
     required this.large,
-  })  : super(key: key);
+  }) : super(key: key);
 
   /// Returns `true` if the current device is small
   /// (a smartphone).
@@ -43,13 +43,12 @@ class Responsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth <= _smallSize)
-        return small;
-      else if (constraints.maxWidth < _largeSize)
-        return medium ?? small;
-      else
-        return large;
-    });
+    Size size = MediaQuery.of(context).size;
+    if (size.width <= _smallSize)
+      return small;
+    else if (size.width < _largeSize)
+      return medium ?? small;
+    else
+      return large;
   }
 }

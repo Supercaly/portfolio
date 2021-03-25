@@ -28,9 +28,11 @@ class ProjectsSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SectionTitleBar(section: 3, title: "My Projects"),
+            SizedBox(height: 42.0),
             Selector<AppState, List<Project>>(
               selector: (_, state) => state.projects,
               builder: (context, value, _) => ColumnBuilder(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 itemCount: value.length,
                 builder: (context, index) =>
                     ProjectWidget(project: value[index]),
