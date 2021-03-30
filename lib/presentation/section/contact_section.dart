@@ -18,7 +18,6 @@ class ContactSection extends StatelessWidget {
         key: Key("contacts-visibility-detector-key"),
         onVisibilityChanged: (info) {
           final fraction = info.visibleFraction * 100;
-          print('Visibility changed ${info.visibleFraction * 100}');
           if (fraction > 20.0)
             onVisibilityChange(true);
           else

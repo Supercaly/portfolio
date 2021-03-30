@@ -27,6 +27,9 @@ flutter:
 
   assets:
     - assets/images/profile_picture.jpg
+    - assets/images/tasky/home_page.png
+    - assets/images/tasky/edit_page.png
+    - assets/images/tasky/comments_detail.png
 
   fonts:
     - family: Rubik

@@ -66,7 +66,7 @@ class AppState extends ChangeNotifier {
       title: "Balance",
       description:
           "Applicazione per Smartphone sviluppata per la tesi in Informatica Applicata in accordo con DIGIT s.r.l. con lo scopo di consentire a chiunque di misurare la propria postura stabilometrica in pochi secondi sfruttando gli accelerometri del proprio smartphone.",
-      images: ["", "", ""],
+      images: ["assets/images/tasky/home_page.png", "assets/images/tasky/edit_page.png", "assets/images/tasky/comments_detail.png"],
       links: [Link(type: LinkType.playstore, url: "")],
       tags: ["Dart", "Falutter"],
     ),
@@ -74,7 +74,7 @@ class AppState extends ChangeNotifier {
       title: "Tasky",
       description:
           "Applicazione multi piattaforma per la gestione dell'andamento dei progetti all'interno di un ambiente di lavoro.",
-      images: ["", ""],
+      images: ["assets/images/tasky/home_page.png", "assets/images/tasky/edit_page.png", "assets/images/tasky/comments_detail.png"],
       links: [Link(type: LinkType.github, url: "")],
       tags: ["Dart", "Falutter"],
     ),
@@ -83,6 +83,7 @@ class AppState extends ChangeNotifier {
       description:
           "Applicazione per dispositivi Android che consente agli utenti di segnalare i propri animali domestici scomparsi in modo da poterli ritrovare grazie all'aiuto della comunity.",
       links: [Link(type: LinkType.playstore, url: "")],
+      images: ["assets/images/tasky/home_page.png", "assets/images/tasky/edit_page.png", "assets/images/tasky/comments_detail.png"],
       tags: ["Android"],
     ),
   ];

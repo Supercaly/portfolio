@@ -5,8 +5,8 @@ import 'package:portfolio/presentation/widget/responsive.dart';
 class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = Responsive.isLarge(context) ? 320.0 : 200.0;
-    final offset = Responsive.isLarge(context) ? 50.0 : 30.0;
+    final size = Responsive.isLarge(context) ? 280.0 : 200.0;
+    final offset = Responsive.isLarge(context) ? 40.0 : 20.0;
 
     return Center(
       child: Stack(
