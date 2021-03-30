@@ -29,33 +29,56 @@ class AppWidget extends StatelessWidget {
                     preferredSize: Size.fromHeight(65.0),
                   )
                 : null,
-            body: Stack(
-              children: [
-                CustomScrollView(
-                  slivers: [
-                    HomeSection(),
-                    AboutSection(key: Keys.about),
-                    CareerSection(key: Keys.experience),
-                    ProjectsSection(key: Keys.projects),
-                    ContactSection(key: Keys.contacts),
-                    CreditsSection(),
-                  ],
-                ),
-                if (Responsive.isLarge(context))
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 56.0, bottom: 56.0),
-                      child: SocialLink(
-                        direction: Axis.vertical,
-                      ),
-                    ),
-                  ),
-              ],
-            ),
+            body: AppBody(),
           ),
         ),
       ),
+    );
+  }
+}
+
+class AppBody extends StatefulWidget {
+  @override
+  _AppBodyState createState() => _AppBodyState();
+}
+
+class _AppBodyState extends State<AppBody> {
+  bool _visible = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        CustomScrollView(
+          slivers: [
+            HomeSection(),
+            AboutSection(key: Keys.about),
+            CareerSection(key: Keys.experience),
+            ProjectsSection(key: Keys.projects),
+            ContactSection(
+              key: Keys.contacts,
+              onVisibilityChange: (visible) => setState(() {
+                _visible = !visible;
+              }),
+            ),
+            CreditsSection(),
+          ],
+        ),
+        if (Responsive.isLarge(context))
+          AnimatedOpacity(
+            opacity: _visible ? 1.0 : 0.0,
+            duration: Durations.fade,
+            child: Align(
+              alignment: Alignment.bottomLeft,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 56.0, bottom: 56.0),
+                child: SocialLink(
+                  direction: Axis.vertical,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

@@ -132,6 +132,7 @@ class AppTheme {
 
 class Durations {
   static const Duration scroll = const Duration(milliseconds: 350);
+  static const Duration fade = const Duration(milliseconds: 500);
 }
 
 class Keys {
