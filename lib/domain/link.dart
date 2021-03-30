@@ -7,6 +7,7 @@ enum LinkType {
   playstore,
   phone,
   email,
+  web,
 }
 
 class Link {
