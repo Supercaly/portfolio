@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:portfolio/domain/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LinkWidget extends StatelessWidget {
   final Link link;
@@ -13,13 +14,15 @@ class LinkWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(_mapLinkToIcon()),
-      onPressed: () {},
+      icon: Icon(_mapLinkToIcon(link.type)),
+      onPressed: () async {
+        if (await canLaunch(link.url)) await launch(link.url);
+      },
     );
   }
 
-  IconData _mapLinkToIcon() {
-    switch (link.type) {
+  static IconData _mapLinkToIcon(LinkType type) {
+    switch (type) {
       case LinkType.github:
         return FeatherIcons.github;
       case LinkType.facebook:
