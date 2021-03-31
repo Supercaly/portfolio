@@ -41,6 +41,8 @@ class LinkWidget extends StatelessWidget {
         return FeatherIcons.mail;
       case LinkType.web:
         return FeatherIcons.globe;
+      case LinkType.pdf:
+        return FeatherIcons.fileText;
     }
   }
 }

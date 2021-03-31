@@ -8,6 +8,7 @@ enum LinkType {
   phone,
   email,
   web,
+  pdf,
 }
 
 class Link {

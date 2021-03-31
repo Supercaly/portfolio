@@ -17,6 +17,8 @@ class AppState {
     Link(type: LinkType.twitter, url: "https://twitter.com/lorenzocalisti"),
     Link(type: LinkType.linkedin, url: "https://www.linkedin.com/in/lorenzo-calisti96"),
     Link(type: LinkType.email, url: "mailto:l.calisti96@gmail.com"),
+    Link(type: LinkType.pdf, url: "https://drive.google.com/file/d/1Mnjvhg8SAGgInLhgXlmGRqESA0BBDlKe/view?usp=sharing"),
+
   ];
   static About about = About(
     about: 'about_content'.tr(),
