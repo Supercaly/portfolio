@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/application/app_state.dart';
-import 'package:portfolio/core/column_extension.dart';
+import 'package:portfolio/presentation/extension/column_row_builder.dart';
 import 'package:portfolio/domain/link.dart';
 import 'package:portfolio/presentation/widget/link_widget.dart';
 import 'package:provider/provider.dart';
