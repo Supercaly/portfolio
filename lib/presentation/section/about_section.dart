@@ -8,6 +8,7 @@ import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/section_title_bar.dart';
 import 'package:portfolio/presentation/widget/skill_widget.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class AboutSection extends StatelessWidget {
   AboutSection({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class AboutContentSmall extends StatelessWidget {
         builder: (context, value, _) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SectionTitleBar(section: 1, title: "About Me"),
+            SectionTitleBar(section: 1, title: 'about_title'.tr()),
             SizedBox(height: 48.0),
             ProfileImage(),
             SizedBox(height: 48.0),
@@ -71,7 +72,7 @@ class AboutContentLarge extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            SectionTitleBar(section: 1, title: "About Me"),
+            SectionTitleBar(section: 1, title: 'about_title'.tr()),
             SizedBox(height: 48.0),
             Flexible(
               child: Row(

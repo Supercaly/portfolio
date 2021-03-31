@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/app_theme.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/social_link.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomeSection extends StatelessWidget {
   @override
@@ -15,21 +16,23 @@ class HomeSection extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Hello! My name is",
-                    style: Theme.of(context)
-                        .textTheme
-                        .button
-                        ?.copyWith(color: AppColors.secondary)),
+                Text(
+                  'hello_caption',
+                  style: Theme.of(context)
+                      .textTheme
+                      .button
+                      ?.copyWith(color: AppColors.secondary),
+                ).tr(),
                 SizedBox(height: 10),
                 Text(
-                  "Lorenzo Calisti",
+                  'hello_name',
                   style: Theme.of(context).textTheme.headline4,
-                ),
+                ).tr(),
                 SizedBox(height: 10),
                 Text(
-                  "Developer & Computer Science student based in Italy.",
+                  'hello_subtitle',
                   style: Theme.of(context).textTheme.button,
-                ),
+                ).tr(),
               ],
             ),
             if (!Responsive.isLarge(context)) SocialLink(),

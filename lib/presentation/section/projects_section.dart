@@ -7,6 +7,7 @@ import 'package:portfolio/presentation/widget/project_widget.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/section_title_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ProjectsSection extends StatelessWidget {
   ProjectsSection({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class ProjectsSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SectionTitleBar(section: 3, title: "My Projects"),
+            SectionTitleBar(section: 3, title: 'project_title'.tr()),
             SizedBox(height: 42.0),
             Selector<AppState, List<Project>>(
               selector: (_, state) => state.projects,

@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/application/app_state.dart';
 import 'package:portfolio/presentation/app_theme.dart';
+import 'package:portfolio/presentation/generated/codegen_loader.g.dart';
 import 'package:portfolio/presentation/section/about_section.dart';
 import 'package:portfolio/presentation/section/contact_section.dart';
 import 'package:portfolio/presentation/section/credits_section.dart';
@@ -17,19 +19,30 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: buildTheme,
-      home: ChangeNotifierProvider<AppState>(
-        create: (context) => AppState(),
-        child: Builder(
-          builder: (context) => Scaffold(
-            appBar: Responsive.isLarge(context)
-                ? PreferredSize(
-                    child: CustomAppBar(),
-                    preferredSize: Size.fromHeight(65.0),
-                  )
-                : null,
-            body: AppBody(),
+    return EasyLocalization(
+      supportedLocales: [Locale("en")],
+      fallbackLocale: Locale("en"),
+      path: "assets/translations",
+      assetLoader: CodegenLoader(),
+      child: Builder(
+        builder: (context) => MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          builder: buildTheme,
+          home: ChangeNotifierProvider<AppState>(
+            create: (context) => AppState(),
+            child: Builder(
+              builder: (context) => Scaffold(
+                appBar: Responsive.isLarge(context)
+                    ? PreferredSize(
+                        child: CustomAppBar(),
+                        preferredSize: Size.fromHeight(65.0),
+                      )
+                    : null,
+                body: AppBody(),
+              ),
+            ),
           ),
         ),
       ),

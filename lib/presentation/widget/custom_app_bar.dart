@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/app_theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CustomAppBar extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
                 duration: Durations.scroll,
               );
             },
-            child: Text("about"),
+            child: Text('appbar_about').tr(),
           ),
           TextButton(
             onPressed: () {
@@ -25,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
                 duration: Durations.scroll,
               );
             },
-            child: Text("experience"),
+            child: Text('appbar_experience').tr(),
           ),
           TextButton(
             onPressed: () {
@@ -34,7 +35,7 @@ class CustomAppBar extends StatelessWidget {
                 duration: Durations.scroll,
               );
             },
-            child: Text("projects"),
+            child: Text('appbar_projects').tr(),
           ),
           TextButton(
             onPressed: () {
@@ -43,7 +44,7 @@ class CustomAppBar extends StatelessWidget {
                 duration: Durations.scroll,
               );
             },
-            child: Text("contacts"),
+            child: Text('appbar_contacts').tr(),
           ),
         ],
       ),

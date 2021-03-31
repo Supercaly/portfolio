@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/app_theme.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ContactSection extends StatelessWidget {
   final void Function(bool visible) onVisibilityChange;
@@ -35,17 +36,17 @@ class ContactSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Contact Me",
+                'contact_title',
                 style: Theme.of(context).textTheme.subtitle1,
-              ),
+              ).tr(),
               SizedBox(height: 16.0),
               Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque massa mattis tellus vitae, felis at ut vitae. Massa nullam massa potenti massa.",
+                'contact_description',
                 style: Theme.of(context)
                     .textTheme
                     .subtitle2
                     ?.copyWith(fontSize: FontSizes.s14),
-              ),
+              ).tr(),
               SizedBox(height: 24.0),
               Center(
                 child: ElevatedButton(
