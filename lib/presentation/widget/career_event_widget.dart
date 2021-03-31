@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/domain/career_event.dart';
 import 'package:portfolio/presentation/app_theme.dart';
@@ -52,7 +53,7 @@ class CareerEventWidget extends StatelessWidget {
               if (event.moreInfo != null) SizedBox(height: 8.0),
               if (event.startDate != null || event.endDate != null)
                 Text(
-                  _formatDates(),
+                  _formatDates(context),
                   style: Theme.of(context).textTheme.overline,
                 ),
             ],
@@ -62,11 +63,13 @@ class CareerEventWidget extends StatelessWidget {
     );
   }
 
-  String _formatDates() {
+  String _formatDates(BuildContext context) {
     StringBuffer sb = StringBuffer();
-    if (event.startDate != null) sb.write(event.startDate.toString());
+    if (event.startDate != null)
+      sb.write(DateFormat.yMMM(context.locale.languageCode).format(event.startDate!));
     if (event.startDate != null && event.endDate != null) sb.write("-");
-    if (event.endDate != null) sb.write(event.endDate.toString());
+    if (event.endDate != null)
+      sb.write(DateFormat.yMMM(context.locale.languageCode).format(event.endDate!));
     return sb.toString();
   }
 }
