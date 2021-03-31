@@ -30,7 +30,8 @@ class ProjectsSection extends StatelessWidget {
             ColumnBuilder(
               crossAxisAlignment: CrossAxisAlignment.start,
               itemCount: AppState.projects.length,
-              builder: (context, index) => ProjectWidget(project: AppState.projects[index]),
+              builder: (context, index) =>
+                  ProjectWidget(project: AppState.projects[index]),
               separator: 42.0,
             ),
           ],

@@ -66,10 +66,12 @@ class CareerEventWidget extends StatelessWidget {
   String _formatDates(BuildContext context) {
     StringBuffer sb = StringBuffer();
     if (event.startDate != null)
-      sb.write(DateFormat.yMMM(context.locale.languageCode).format(event.startDate!));
+      sb.write(DateFormat.yMMM(context.locale.languageCode)
+          .format(event.startDate!));
     if (event.startDate != null && event.endDate != null) sb.write("-");
     if (event.endDate != null)
-      sb.write(DateFormat.yMMM(context.locale.languageCode).format(event.endDate!));
+      sb.write(
+          DateFormat.yMMM(context.locale.languageCode).format(event.endDate!));
     return sb.toString();
   }
 }
