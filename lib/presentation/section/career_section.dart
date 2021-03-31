@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/application/app_state.dart';
+import 'package:portfolio/presentation/constants/app_state.dart';
 import 'package:portfolio/presentation/extension/column_row_builder.dart';
-import 'package:portfolio/domain/study.dart';
-import 'package:portfolio/domain/work.dart';
 import 'package:portfolio/presentation/app_theme.dart';
 import 'package:portfolio/presentation/widget/career_event_widget.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/section_title_bar.dart';
-import 'package:provider/provider.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class CareerSection extends StatelessWidget {
@@ -34,13 +31,11 @@ class CareerSection extends StatelessWidget {
               title: 'work_title'.tr(),
             ),
             SizedBox(height: 38.0),
-            Selector<AppState, List<Work>>(
-              selector: (_, state) => state.career.works,
-              builder: (context, value, _) => ColumnBuilder(
-                itemCount: value.length,
-                builder: (_, index) => CareerEventWidget(event: value[index]),
-                separator: 16.0,
-              ),
+            ColumnBuilder(
+              itemCount: AppState.career.works.length,
+              builder: (_, index) =>
+                  CareerEventWidget(event: AppState.career.works[index]),
+              separator: 16.0,
             ),
             SizedBox(height: Insets.sectionVerticalOffsetSmall),
             SectionTitleBar(
@@ -49,13 +44,11 @@ class CareerSection extends StatelessWidget {
               title: 'study_title'.tr(),
             ),
             SizedBox(height: 38.0),
-            Selector<AppState, List<Study>>(
-              selector: (_, state) => state.career.study,
-              builder: (context, value, _) => ColumnBuilder(
-                itemCount: value.length,
-                builder: (_, index) => CareerEventWidget(event: value[index]),
-                separator: 16.0,
-              ),
+            ColumnBuilder(
+              itemCount: AppState.career.study.length,
+              builder: (_, index) =>
+                  CareerEventWidget(event: AppState.career.study[index]),
+              separator: 16.0,
             ),
           ],
         ),

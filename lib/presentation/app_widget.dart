@@ -1,6 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/application/app_state.dart';
 import 'package:portfolio/presentation/app_theme.dart';
 import 'package:portfolio/presentation/generated/codegen_loader.g.dart';
 import 'package:portfolio/presentation/section/about_section.dart';
@@ -12,7 +11,6 @@ import 'package:portfolio/presentation/section/career_section.dart';
 import 'package:portfolio/presentation/widget/custom_app_bar.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:portfolio/presentation/widget/social_link.dart';
-import 'package:provider/provider.dart';
 
 class AppWidget extends StatelessWidget {
   AppWidget({Key? key}) : super(key: key);
@@ -30,18 +28,15 @@ class AppWidget extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           builder: buildTheme,
-          home: ChangeNotifierProvider<AppState>(
-            create: (context) => AppState(),
-            child: Builder(
-              builder: (context) => Scaffold(
-                appBar: Responsive.isLarge(context)
-                    ? PreferredSize(
-                        child: CustomAppBar(),
-                        preferredSize: Size.fromHeight(65.0),
-                      )
-                    : null,
-                body: AppBody(),
-              ),
+          home: Builder(
+            builder: (context) => Scaffold(
+              appBar: Responsive.isLarge(context)
+                  ? PreferredSize(
+                      child: CustomAppBar(),
+                      preferredSize: Size.fromHeight(65.0),
+                    )
+                  : null,
+              body: AppBody(),
             ),
           ),
         ),

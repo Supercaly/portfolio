@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:portfolio/domain/about.dart';
 import 'package:portfolio/domain/career.dart';
 import 'package:portfolio/domain/link.dart';
@@ -8,8 +7,10 @@ import 'package:portfolio/domain/study.dart';
 import 'package:portfolio/domain/work.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class AppState extends ChangeNotifier {
-  final List<Link> socials = [
+class AppState {
+  AppState._();
+
+  static List<Link> socials = [
     Link(type: LinkType.github, url: ""),
     Link(type: LinkType.facebook, url: ""),
     Link(type: LinkType.instagram, url: ""),
@@ -18,7 +19,7 @@ class AppState extends ChangeNotifier {
     Link(type: LinkType.phone, url: ""),
     Link(type: LinkType.email, url: ""),
   ];
-  final About about = About(
+  static About about = About(
     about: 'about_content'.tr(),
     skills: [
       Skill(name: "Language"),
@@ -29,7 +30,7 @@ class AppState extends ChangeNotifier {
       Skill(name: "Language"),
     ],
   );
-  final Career career = Career(
+  static Career career = Career(
     works: [
       Work(
         name: 'work_bosch_title'.tr(),
@@ -58,7 +59,7 @@ class AppState extends ChangeNotifier {
       ),
     ],
   );
-  final List<Project> projects = [
+  static List<Project> projects = [
     Project(
       title: 'project_balance_title'.tr(),
       description: 'project_balance_description'.tr(),
