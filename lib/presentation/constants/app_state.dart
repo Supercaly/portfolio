@@ -13,12 +13,18 @@ class AppState {
   static List<Link> socials = [
     Link(type: LinkType.github, url: "https://github.com/Supercaly/"),
     Link(type: LinkType.facebook, url: "https://www.facebook.com/l.calisti/"),
-    Link(type: LinkType.instagram, url: "https://www.instagram.com/lorenzo_calisti/"),
+    Link(
+        type: LinkType.instagram,
+        url: "https://www.instagram.com/lorenzo_calisti/"),
     Link(type: LinkType.twitter, url: "https://twitter.com/lorenzocalisti"),
-    Link(type: LinkType.linkedin, url: "https://www.linkedin.com/in/lorenzo-calisti96"),
+    Link(
+        type: LinkType.linkedin,
+        url: "https://www.linkedin.com/in/lorenzo-calisti96"),
     Link(type: LinkType.email, url: "mailto:l.calisti96@gmail.com"),
-    Link(type: LinkType.pdf, url: "https://drive.google.com/file/d/1Mnjvhg8SAGgInLhgXlmGRqESA0BBDlKe/view?usp=sharing"),
-
+    Link(
+        type: LinkType.pdf,
+        url:
+            "https://drive.google.com/file/d/1Mnjvhg8SAGgInLhgXlmGRqESA0BBDlKe/view?usp=sharing"),
   ];
   static About about = About(
     about: 'about_content'.tr(),
@@ -70,7 +76,10 @@ class AppState {
         "assets/images/tasky/comments_detail.png"
       ],
       links: [
-        Link(type: LinkType.playstore, url: "https://play.google.com/store/apps/details?id=srl.digit.balance"),
+        Link(
+            type: LinkType.playstore,
+            url:
+                "https://play.google.com/store/apps/details?id=srl.digit.balance"),
         Link(type: LinkType.web, url: "https://www.balancemobile.it"),
       ],
       tags: ["Dart", "Flutter"],
@@ -84,7 +93,9 @@ class AppState {
         "assets/images/tasky/comments_detail.png"
       ],
       links: [
-        Link(type: LinkType.github, url: "https://github.com/Supercaly/ASPDM-Project"),
+        Link(
+            type: LinkType.github,
+            url: "https://github.com/Supercaly/ASPDM-Project"),
         Link(type: LinkType.web, url: "https://aspdm-project.web.app/"),
       ],
       tags: ["Dart", "Flutter"],
@@ -92,7 +103,12 @@ class AppState {
     Project(
       title: 'project_petify_title'.tr(),
       description: 'project_petify_description'.tr(),
-      links: [Link(type: LinkType.playstore, url: "https://play.google.com/store/apps/details?id=com.supercaly.petify")],
+      links: [
+        Link(
+            type: LinkType.playstore,
+            url:
+                "https://play.google.com/store/apps/details?id=com.supercaly.petify")
+      ],
       images: [
         "assets/images/tasky/home_page.png",
         "assets/images/tasky/edit_page.png",
