@@ -71,9 +71,9 @@ class AppState {
       title: 'project_balance_title'.tr(),
       description: 'project_balance_description'.tr(),
       images: [
-        "assets/images/tasky/home_page.png",
-        "assets/images/tasky/edit_page.png",
-        "assets/images/tasky/comments_detail.png"
+        "assets/images/balance/img_1.webp",
+        "assets/images/balance/img_2.webp",
+        "assets/images/balance/img_3.webp"
       ],
       links: [
         Link(
@@ -110,9 +110,9 @@ class AppState {
                 "https://play.google.com/store/apps/details?id=com.supercaly.petify")
       ],
       images: [
-        "assets/images/tasky/home_page.png",
-        "assets/images/tasky/edit_page.png",
-        "assets/images/tasky/comments_detail.png"
+        "assets/images/petify/img_1.webp",
+        "assets/images/petify/img_2.webp",
+        "assets/images/petify/img_3.webp"
       ],
       tags: ["Android"],
     ),
