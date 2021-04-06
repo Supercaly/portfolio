@@ -5,16 +5,21 @@ import 'package:url_launcher/url_launcher.dart';
 
 class LinkWidget extends StatelessWidget {
   final Link link;
+  final Color? color;
 
   const LinkWidget({
     Key? key,
     required this.link,
+    this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(_mapLinkToIcon(link.type)),
+      icon: Icon(
+        _mapLinkToIcon(link.type),
+        color: color,
+      ),
       onPressed: () async {
         if (await canLaunch(link.url)) await launch(link.url);
       },

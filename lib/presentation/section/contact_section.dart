@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/presentation/app_theme.dart';
+import 'package:portfolio/presentation/constants/app_state.dart';
+import 'package:portfolio/presentation/widget/link_widget.dart';
 import 'package:portfolio/presentation/widget/responsive.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -49,14 +51,16 @@ class ContactSection extends StatelessWidget {
               ).tr(),
               SizedBox(height: 24.0),
               Center(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Contact Me",
-                    style: Theme.of(context)
-                        .textTheme
-                        .button
-                        ?.copyWith(fontSize: FontSizes.s18),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Wrap(
+                    spacing: 16.0,
+                    children: AppState.socials
+                        .map((e) => LinkWidget(
+                              link: e,
+                              color: Colors.white,
+                            ))
+                        .toList(),
                   ),
                 ),
               ),
