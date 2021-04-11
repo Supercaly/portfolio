@@ -1,0 +1,44 @@
+name: App Build
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_app:
+    name: Build App
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup Flutter
+      - uses: actions/checkout@v2
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1.4.0
+        with:
+          channel: beta
+      - run: flutter pub get
+      - name: Build part files
+          run: flutter pub run easy_localization:generate -S assets/translations -O lib/presentation/generated
+
+      # Build Android
+      - name: Build Android App Bundle
+        run: flutter build appbundle --release
+
+      # Upload build Artifacts
+      - name: Upload Android build
+        uses: actions/upload-artifact@v2
+        with:
+          name: android-debug
+          path: build/app/outputs/bundle/release/app-release.aab
+
+      # Build Web
+      - name: Build Web Release
+        run: flutter build web --release
+
+      # Upload Webapp to Firebase Hosting
+      - name: Upload Webapp to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_LCALISTI }}"
+          channelId: live
