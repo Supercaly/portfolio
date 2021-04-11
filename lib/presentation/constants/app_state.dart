@@ -29,12 +29,20 @@ class AppState {
   static About about = About(
     about: 'about_content'.tr(),
     skills: [
-      Skill(name: "Language"),
-      Skill(name: "Language"),
-      Skill(name: "Language"),
-      Skill(name: "Language"),
-      Skill(name: "Language"),
-      Skill(name: "Language"),
+      Skill(name: "C / C++"),
+      Skill(name: "Flutter (Dart)"),
+      Skill(name: "Android (Java / Kotlin)"),
+      Skill(name: "Web development (HTML / CSS / JavaScript)"),
+      Skill(name: "NodeJs"),
+      Skill(name: "IOs (Swift)"),
+      Skill(name: "Python"),
+      Skill(name: "Haskell"),
+      Skill(name: "Bash scripting"),
+      Skill(name: "SQL / NoSQL"),
+      Skill(name: "MATLAB"),
+      Skill(name: "LaTex"),
+      Skill(name: "Inkscape"),
+      Skill(name: "Figma"),
     ],
   );
   static Career career = Career(
